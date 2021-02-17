@@ -1,0 +1,28 @@
+.login-screen{
+  height: 100vh;
+}
+.login-form{
+  padding: 3rem;
+  margin: 0 2rem;
+  box-shadow: 0 0 10px rgb(202, 202, 202);
+}
+.login-img{
+  background: url('../../assets/img/login-img.jpg') no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-position: bottom left;
+}
+.btn-primary.custome-btn{
+  border-color: #000;
+  background: #fff;
+  color: #000;
+  padding: 8px 50px;
+  border-radius: 0;
+  transition: all 0.5s ease-in-out;
+}
+.btn-primary.custome-btn:hover{
+  border-color: #000;
+  background: #000;
+  color: #fff;
+  border-radius: 50px;
+}
