@@ -25,6 +25,7 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { LoginComponent } from './login/login.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 //import { NgxSelectModule } from 'ngx-select-ex';
 
 
@@ -44,7 +45,8 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
     TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent,
-    LoginComponent
+    LoginComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
