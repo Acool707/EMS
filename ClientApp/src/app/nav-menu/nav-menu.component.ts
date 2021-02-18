@@ -21,4 +21,9 @@ export class NavMenuComponent implements OnInit {
 
   }
 
+  logout() {
+    this.accountService.logout();
+    this.router.navigateByUrl('/')
+  }
+
 }
