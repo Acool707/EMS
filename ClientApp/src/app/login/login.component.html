@@ -10,20 +10,27 @@
                 <h2>Welcome</h2>
                 <p>Enter your email address and password to access admin panel.</p>
               </div>
-              <form>
+              <form #loginFrom="ngForm" (ngSubmit)="login()" autocomplete="off">
                 <div class="mb-3">
-                  <input type="email" class="form-control" id="" placeholder="User Name">
+                  <input type="email"
+                         name="username"
+                         [(ngModel)]="model.username"
+                         class="form-control"
+                         id="" placeholder="User Name">
                 </div>
                 <div class="mb-3">
-                  <input type="password" class="form-control" id="" placeholder="Password"
+                  <input type="password"
+                         name="password"
+                         [(ngModel)]="model.password"
+                         class="form-control"
+                         id="" placeholder="Password"
                     aria-describedby="passwordHelpInline">
                 </div>
                 <div class="mb-3">
-                  <select class="form-control">
-                    <option selected>Location</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                  <select [(ngModel)]="model.location"
+                          class="form-control"
+                          name="location">
+                    <option [value]="item.name" *ngFor="let item of items">{{item.name}}</option>
                   </select>
                 </div>
                 <div class="mt-4">

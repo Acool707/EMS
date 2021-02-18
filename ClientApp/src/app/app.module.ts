@@ -24,6 +24,7 @@ import { ErrorInterceptor } from './_interceptors/error.interceptor';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { LoginComponent } from './login/login.component';
+import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 //import { NgxSelectModule } from 'ngx-select-ex';
 
 
@@ -55,7 +56,8 @@ import { LoginComponent } from './login/login.component';
     SharedModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true}
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
