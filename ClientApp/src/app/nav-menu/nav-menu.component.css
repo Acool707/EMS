@@ -1,18 +1,28 @@
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+.well-user{
+  padding: 8px 15px;
+  background: url(../../assets/img/top-bar-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 5px #999;
 }
-
-html {
-  font-size: 14px;
+.user-dropdown{
+  margin-bottom: 0;
+  color: #fff;
+  font-size: 16px;
+  background: #cfc0ac;
+  border: 1px solid #577441;
+  padding: 5px 15px;
+  display: inline-block;
+  border-radius: 50px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
 }
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.user-dropdown i{
+  font-size: 20px;
 }
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+.user-dropdown-li li {
+  border-bottom: 1px solid #dadada;
+}
+.user-dropdown-li li:last-child{
+  border: none
 }
