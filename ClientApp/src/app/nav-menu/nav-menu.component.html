@@ -1,72 +1,13 @@
-<header>
-
-  <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-primary border-bottom box-shadow mb-3"
-  >
-    <div class="container">
-      <a class="navbar-brand" style="white-space:nowrap" [routerLink]="['/']">de Gournay</a>
-
-      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
-           [ngClass]="{ show: isExpanded }">
-        <ul class="navbar-nav flex-grow">
-          <ng-container *ngIf="accountService.currentUser$ | async">
-            <li class="nav-item"
-                [routerLinkActive]="['link-active']"
-                [routerLinkActiveOptions]="{ exact: true }">
-              <a class="nav-link text-dark" [routerLink]="['/members']">Matches</a>
-            </li>
-            <li class="nav-item" [routerLinkActive]="['link-active']">
-              <a class="nav-link text-dark" [routerLink]="['/lists']">Lists</a>
-            </li>
-            <li class="nav-item" [routerLinkActive]="['link-active']">
-              <a class="nav-link text-dark" [routerLink]="['/messages']">Messages</a>
-            </li>
-          </ng-container>
-
-          <!--<li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/errors']">Errors</a>
-          </li>-->
-        </ul>
-      </div>
-
-      <!--<div class="dropdown" *ngIf="accountService.currentUser$ | async">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-          Welcome User
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-          <li><a class="dropdown-item">Edit Profile</a></li>
-          <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
-
-        </ul>
-      </div>-->
-
-      <div class="btn-group" dropdown *ngIf="(accountService.currentUser$ | async) as user">
-        <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-                aria-controls="dropdown-basic">
-          Welcome {{user.username | titlecase}} <span class="caret"></span>
-        </button>
-        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-            role="menu" aria-labelledby="button-basic">
-          <li role="menuitem"><a class="dropdown-item" >Edit Profile</a></li>
-          <li class="divider dropdown-divider"></li>
-          <li role="menuitem"><a class="dropdown-item" (click)="logout()">Logout</a></li>
-        </ul>
-      </div>
-
-
-      <form *ngIf="(accountService.currentUser$ | async) === null" #loginFrom="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
-        <input name="username"
-               [(ngModel)]="model.username"
-               class="form-control mr-2"
-               type="text"
-               placeholder="Username">
-        <input name="password"
-               [(ngModel)]="model.password"
-               class="form-control mr-2"
-               type="password"
-               placeholder="Password">
-        <button class="btn btn-success" type="submit">Login</button>
-      </form>
-    </div>
-  </nav>
+<header class="well-user text-right">
+  <div class="btn-group" dropdown>
+    <button id="button-animated" dropdownToggle type="button" class="btn user-dropdown dropdown-toggle"
+      aria-controls="dropdown-animated">
+      Welcome Monjur <i class="fa fa-user-circle-o"></i>
+    </button>
+    <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu user-dropdown-li dropdown-menu-right" role="menu"
+      aria-labelledby="button-animated">
+      <li><a class="dropdown-item" href="#"><i class="fa fa-user-o"></i> Edit User Profile</a></li>
+      <li><a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Log Out</a></li>
+    </ul>
+  </div>
 </header>
