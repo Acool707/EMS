@@ -16,20 +16,21 @@
                          name="username"
                          [(ngModel)]="model.username"
                          class="form-control"
-                         id="" placeholder="User Name">
+                         placeholder="User Name">
                 </div>
                 <div class="mb-3">
                   <input type="password"
                          name="password"
                          [(ngModel)]="model.password"
                          class="form-control"
-                         id="" placeholder="Password"
+                         placeholder="Password"
                     aria-describedby="passwordHelpInline">
                 </div>
                 <div class="mb-3">
                   <select [(ngModel)]="model.location"
                           class="form-control"
                           name="location">
+                    <option [value]="undefined" disabled selected hidden>Select Location</option>
                     <option [value]="item.name" *ngFor="let item of items">{{item.name}}</option>
                   </select>
                 </div>
