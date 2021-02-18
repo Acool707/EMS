@@ -21,7 +21,7 @@ namespace EMS.Controllers
 
         
         [HttpGet]
-        public async Task<IEnumerable<UserDTO>> GetUsers()
+        public async Task<IEnumerable<MemberDTO>> GetUsers()
         {
             var users = await _userRepository.GetAppUsers();
 
@@ -30,7 +30,7 @@ namespace EMS.Controllers
         }
         
         [HttpGet("{username}")]
-        public async Task<UserDTO> GetUser(string username)
+        public async Task<MemberDTO> GetUser(string username)
         {
             return await _userRepository.GetAppUser(username);
         }

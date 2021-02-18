@@ -12,7 +12,7 @@ namespace EMS.Helpers
     {
         public AutoMapperProfiles( )
         {
-            CreateMap<AppUser, UserDTO>();
+            CreateMap<AppUser, MemberDTO>();
             CreateMap<Menu, MenuDTO>();
             CreateMap<Permission, PermissionDTO>();
             CreateMap<UserHoliday, UserHolidayDTO>();

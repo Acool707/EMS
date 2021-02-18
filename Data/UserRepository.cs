@@ -23,18 +23,18 @@ namespace EMS.Data
             _mapper = mapper;
         }
 
-        public async Task<UserDTO> GetAppUser(string username)
+        public async Task<MemberDTO> GetAppUser(string username)
         {
             return await _context.Users
                 .Where(x => x.UserName == username)
-                .ProjectTo<UserDTO>(_mapper.ConfigurationProvider)
+                .ProjectTo<MemberDTO>(_mapper.ConfigurationProvider)
                 .SingleOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<UserDTO>> GetAppUsers()
+        public async Task<IEnumerable<MemberDTO>> GetAppUsers()
         {
             return await _context.Users
-                .ProjectTo<UserDTO>(_mapper.ConfigurationProvider)
+                .ProjectTo<MemberDTO>(_mapper.ConfigurationProvider)
                 .ToListAsync();
         }
 

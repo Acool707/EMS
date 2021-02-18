@@ -14,7 +14,7 @@ namespace EMS.Interface
         Task<IEnumerable<AppUser>> GetUsersAsync();
         Task<AppUser> GetUserByIdAsync(int id);
         Task<AppUser> GetUserByUsernameAsync(string username);
-        Task<IEnumerable<UserDTO>> GetAppUsers();
-        Task<UserDTO> GetAppUser(string username);
+        Task<IEnumerable<MemberDTO>> GetAppUsers();
+        Task<MemberDTO> GetAppUser(string username);
     }
 }
