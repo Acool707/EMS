@@ -3,7 +3,9 @@
   background: url(../../assets/img/top-bar-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0 0 5px #999;
+  position: fixed;
+  width: 82%;
+  right: 0;
 }
 .user-dropdown{
   margin-bottom: 0;

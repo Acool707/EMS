@@ -5,7 +5,9 @@
 body{
   font-family: 'Poppins', sans-serif;
 }
-
+main{
+  margin: 67px 15px 15px;
+}
 .middle-parent {
   position: relative;
   display: table;
@@ -15,4 +17,21 @@ body{
 .middle {
   display: table-cell;
   vertical-align: middle;
+}
+.sec-title h2{
+  background: #74904D;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  padding: 5px 0;
+  margin-bottom: 15px;
+  border-radius: 50px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+}
+.m-card{
+  border: 1px solid #74904D;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
 }

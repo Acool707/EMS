@@ -3,8 +3,11 @@
   background: url('../../assets/img/side-bar.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 100%;
+  width: 18%;
+  left: 0;
   overflow-y: auto;
+  position: fixed;
 }
 
 .side-bar::-webkit-scrollbar {

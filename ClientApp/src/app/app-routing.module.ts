@@ -1,3 +1,4 @@
+import { StaffListComponent } from './staff-list/staff-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
@@ -14,7 +15,15 @@ import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent,
+    //runGuardsAndResolvers: 'always',
+    //canActivate: [AuthGuard],
+    children: [
+      { path: 'staff-list', component: StaffListComponent,},
+
+    ]
+
+},
   {
     path: '',
     runGuardsAndResolvers: 'always',
