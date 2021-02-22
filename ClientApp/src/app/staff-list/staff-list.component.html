@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-8">
           <div class="text-right">
-            <button type="button" class="btn btn-outline-primary">
+            <button type="button" class="btn btn-outline-primary" (click)="lgModal.show()">
               <i class="fa fa-plus"></i>
               Add
             </button>
@@ -27,15 +27,8 @@
     <!-- //Header -->
     <div class="m-card-body">
       <div>
-        <ngx-datatable class="material"
-                       [columnMode]="ColumnMode.force"
-                       [headerHeight]="50"
-                       [limit]="10"
-                       [footerHeight]="50"
-                       rowHeight="auto"
-                       rowWidth="auto"
-                       [rows]="members"
-                       [columns]="columns">
+        <ngx-datatable class="material" [columnMode]="ColumnMode.force" [headerHeight]="50" [limit]="10"
+          [footerHeight]="50" rowHeight="auto" rowWidth="auto" [rows]="rows" [columns]="columns">
           <ngx-datatable-column name="Username" prop='username'>
           </ngx-datatable-column>
           <ngx-datatable-column name="Name" prop='name'>
@@ -51,17 +44,16 @@
           <ngx-datatable-column name="Access" prop='access'>
           </ngx-datatable-column>
           <ngx-datatable-column name="Actions" prop="name">
-            <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value"
-                         let-row="row">
-              <button type="button">
+            <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+              <button class="action-btn" title="Edit" type="button">
                 <i class="fa fa-pencil"></i>
 
               </button>
-              <button type="button">
+              <button class="action-btn" title="View" type="button">
                 <i class="fa fa-eye"></i>
 
               </button>
-              <button type="button">
+              <button class="action-btn" title="Delete" type="button">
                 <i class="fa fa-trash"></i>
               </button>
             </ng-template>
@@ -73,7 +65,20 @@
   </div>
 
   <!-- Title -->
-  
-
-
 </section>
+
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-sizes-name1" class="modal-title pull-left">Add Staff</h4>
+        <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-add-staff></app-add-staff>
+      </div>
+    </div>
+  </div>
+</div>
