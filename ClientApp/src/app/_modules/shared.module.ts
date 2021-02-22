@@ -5,7 +5,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 
 @NgModule({
@@ -18,7 +18,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     BsDropdownModule.forRoot(),
     NgxDatatableModule,
     ModalModule.forRoot(),
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    NgMultiSelectDropDownModule.forRoot()
   ],
 
   exports: [
@@ -26,7 +27,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     BsDropdownModule,
     NgxDatatableModule,
     ModalModule,
-    BsDatepickerModule
+    BsDatepickerModule,
+    NgMultiSelectDropDownModule
   ],
 })
 export class SharedModule { }
