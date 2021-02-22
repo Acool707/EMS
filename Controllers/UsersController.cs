@@ -1,13 +1,14 @@
 ﻿using AutoMapper;
 using EMS.DTOs;
 using EMS.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace EMS.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class UsersController : BaseController
     {
         private readonly IUserRepository _userRepository;

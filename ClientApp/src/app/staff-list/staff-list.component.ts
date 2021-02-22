@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ColumnMode } from '@swimlane/ngx-datatable';
+import { Member } from '../_models/member';
+import { MemberService } from '../_services/member.service';
 
 @Component({
   selector: 'app-staff-list',
@@ -8,7 +10,7 @@ import { ColumnMode } from '@swimlane/ngx-datatable';
 })
 export class StaffListComponent implements OnInit {
   ColumnMode = ColumnMode;
-
+  members: Member[];
   rows = [
     {username:'ram', name:'Ram Chandra', email:'ram@gmail.com', department:'IT', usertype:'Admin', location:'Kolkata', access:'All',}
     //{ name: 'Austin', gender: 'Male', company: 'Swimlane', },
@@ -30,20 +32,29 @@ export class StaffListComponent implements OnInit {
     //{ name: 'Molly', gender: 'Female', company: 'Burger King', }
   ];
   columns = [];
-  constructor() { }
+  constructor(private memberService:MemberService) { }
 
   ngOnInit(): void {
-    this.columns = [
-      { prop: 'username', name: 'Username' },
-      { prop: 'name', name: 'Name' },
-      { prop: 'email', name: 'Email' },
-      { prop: 'department', name: 'Department' },
-      { prop: 'usertype', name: 'User Type' },
-      { prop: 'location', name: 'Location' },
-      { prop: 'access', name: 'Access' },
-      { prop: 'actions', name: 'Actions' }
-    ];
+    //this.columns = [
+    //  { prop: 'username', name: 'Username' },
+    //  { prop: 'name', name: 'Name' },
+    //  { prop: 'email', name: 'Email' },
+    //  { prop: 'department', name: 'Department' },
+    //  { prop: 'usertype', name: 'User Type' },
+    //  { prop: 'location', name: 'Location' },
+    //  { prop: 'access', name: 'Access' },
+    //  { prop: 'actions', name: 'Actions' }
+    //];
 
+    this.loadMembers();
+
+  }
+
+
+  loadMembers() {
+    this.memberService.getMembers().subscribe(members => {
+      this.members = members;
+    })
   }
 
 }
