@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace EMS.DTOs
 {
@@ -12,11 +14,16 @@ namespace EMS.DTOs
         public string Firstname { get; set; }
         public string Middlename { get; set; }
         public string LastName { get; set; }
-        [Required]
+        public DateTime DOB { get; set; }
+        public string SSN { get; set; }
         public string UserType { get; set; }
-        [Required]
         public string Department { get; set; }
-        [Required]
         public string Location { get; set; }
+        public string Company { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public string WhatsappNumber { get; set; }
+        public ICollection<MenuDTO> Menus { get; set; }
+        public ICollection<WebsiteDTO> Websites { get; set; }
     }
 }

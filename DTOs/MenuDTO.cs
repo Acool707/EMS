@@ -1,8 +1,12 @@
-﻿namespace EMS.DTOs
+﻿using Newtonsoft.Json;
+
+namespace EMS.DTOs
 {
     public class MenuDTO
     {
-        public int Id { get; set; }
-        public int MenuType { get; set; }
+        [JsonProperty(PropertyName = "item_id")]
+        public int item_id { get; set; }
+        [JsonProperty(PropertyName = "item_text")]
+        public string item_text { get; set; }
     }
 }

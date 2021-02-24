@@ -11,6 +11,7 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,7 @@ const routes: Routes = [
     //canActivate: [AuthGuard],
     children: [
       { path: 'staff-list', component: StaffListComponent,},
-
+      {path:'register', component:RegisterComponent}
     ]
 
 },

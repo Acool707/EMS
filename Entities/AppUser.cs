@@ -12,6 +12,8 @@ namespace EMS.Entities
         public string FirstName { get; set; }
         public string MiddleNames { get; set; }
         public string LastName { get; set; }
+        public DateTime DOB { get; set; }
+        public string SSN { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public string UserType { get; set; }
@@ -20,6 +22,7 @@ namespace EMS.Entities
         public string Company { get; set; }
         public string Email { get; set; }
         public string  PhoneNumber { get; set; }
+        public string WhatsappNumber { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdateAt { get; set; }
         public ICollection<Menu> Menus { get; set; }

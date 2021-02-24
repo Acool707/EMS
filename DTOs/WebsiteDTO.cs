@@ -6,7 +6,9 @@ namespace EMS.DTOs
 {
     public class WebsiteDTO
     {
-        public int Id { get; set; }
-        public int WebsiteType { get; set; }
+        [JsonProperty(PropertyName = "item_id")]
+        public int item_id { get; set; }
+        [JsonProperty(PropertyName = "item_text")]
+        public string item_text { get; set; }
     }
 }

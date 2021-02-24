@@ -32,11 +32,33 @@ namespace EMS.Controllers
 
             using var hmac = new HMACSHA512();
 
+            Menu menu = new Menu();
+            //ICollection<Menu> menuList;
+
+            //foreach(var item in registerDTO.Menus)
+            //{
+            //    menu.MenuType = item.item_id;
+            //    menu.AppUserId = 
+            //}
+
             var user = new AppUser
             {
                 UserName = registerDTO.Username.ToLower(),
                 PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDTO.Password)),
-                PasswordSalt = hmac.Key
+                PasswordSalt = hmac.Key,
+                FirstName = registerDTO.Firstname,
+                LastName = registerDTO.LastName,
+                MiddleNames = registerDTO.Middlename,
+                Company = registerDTO.Company,
+                DOB = registerDTO.DOB,
+                SSN = registerDTO.SSN,
+                UserType = registerDTO.UserType,
+                Department = registerDTO.Department,
+                Location = registerDTO.Location,
+                Email = registerDTO.Email,
+                PhoneNumber = registerDTO.PhoneNumber,
+                WhatsappNumber = registerDTO.WhatsappNumber
+                
             };
 
             _context.Users.Add(user);
