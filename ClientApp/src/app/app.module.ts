@@ -28,6 +28,7 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { StaffListComponent } from './staff-list/staff-list.component';
 import { AddStaffComponent } from './add-staff/add-staff.component';
+import { EditStaffComponent } from './edit-staff/edit-staff.component';
 //import { NgxSelectModule } from 'ngx-select-ex';
 
 
@@ -50,7 +51,8 @@ import { AddStaffComponent } from './add-staff/add-staff.component';
     LoginComponent,
     NavBarComponent,
     StaffListComponent,
-    AddStaffComponent
+    AddStaffComponent,
+    EditStaffComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
