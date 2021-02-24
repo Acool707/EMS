@@ -13,6 +13,7 @@ namespace EMS.DTOs
         public string FirstName { get; set; }
         public string MiddleNames { get; set; }
         public string LastName { get; set; }
+        public string Name { get; set; }
         public string UserType { get; set; }
         public string Department { get; set; }
         public string Location { get; set; }

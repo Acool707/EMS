@@ -28,7 +28,7 @@
     <div class="m-card-body">
       <div>
         <ngx-datatable class="material" [columnMode]="ColumnMode.force" [headerHeight]="50" [limit]="10"
-          [footerHeight]="50" rowHeight="auto" rowWidth="auto" [rows]="members" [columns]="columns">
+                       [footerHeight]="50" rowHeight="auto" rowWidth="auto" [rows]="members" [columns]="columns">
           <ngx-datatable-column name="Username" prop='username'>
           </ngx-datatable-column>
           <ngx-datatable-column name="Name" prop='name'>
@@ -37,11 +37,9 @@
           </ngx-datatable-column>
           <ngx-datatable-column name="Department" prop='department'>
           </ngx-datatable-column>
-          <ngx-datatable-column name="User Type" prop='usertype'>
+          <ngx-datatable-column name="User Type" prop='userType'>
           </ngx-datatable-column>
           <ngx-datatable-column name="Location" prop='location'>
-          </ngx-datatable-column>
-          <ngx-datatable-column name="Access" prop='access'>
           </ngx-datatable-column>
           <ngx-datatable-column name="Actions" prop="name">
             <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">

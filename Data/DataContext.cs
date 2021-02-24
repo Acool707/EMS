@@ -23,7 +23,8 @@ namespace EMS.Data
 
 
         public DbSet<AppUser> Users{ get; set; }
-        //public DbSet<Menu> Menus { get; set; }
+        public DbSet<Menu> menu { get; set; }
+        public DbSet<Website> website { get; set; }
         
     }
 }

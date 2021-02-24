@@ -17,11 +17,13 @@ namespace EMS.Controllers
     {
         private readonly DataContext _context;
         private readonly ITokenService _tokenService;
+        private readonly IUserRepository _userRepository;
 
-        public AccountController(DataContext context, ITokenService tokenService)
+        public AccountController(DataContext context, ITokenService tokenService, IUserRepository userRepository)
         {
             _context = context;
             _tokenService = tokenService;
+            _userRepository = userRepository;
         }
 
         [HttpPost("register")]
@@ -32,7 +34,7 @@ namespace EMS.Controllers
 
             using var hmac = new HMACSHA512();
 
-            Menu menu = new Menu();
+            
             //ICollection<Menu> menuList;
 
             //foreach(var item in registerDTO.Menus)
@@ -63,6 +65,30 @@ namespace EMS.Controllers
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
+            
+            var newUser = await _userRepository.GetAppUser(registerDTO.Username);
+
+            foreach(var item in registerDTO.Menus)
+            {
+                Menu menu = new Menu
+                {
+                    MenuType = item.item_id,
+                    AppUserId = newUser.Id
+                };
+                _context.menu.Add(menu);
+                await _context.SaveChangesAsync();
+            }
+
+            foreach (var item in registerDTO.Websites)
+            {
+                Website website = new Website
+                {
+                    WebsiteType = item.item_id,
+                    AppUserId = newUser.Id
+                };
+                _context.website.Add(website);
+                await _context.SaveChangesAsync();
+            }
 
             return new UserDTO
             {
