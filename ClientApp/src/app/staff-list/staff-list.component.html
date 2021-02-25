@@ -37,11 +37,9 @@
           </ngx-datatable-column>
           <ngx-datatable-column name="Department" prop='department'>
           </ngx-datatable-column>
-          <ngx-datatable-column name="User Type" prop='usertype'>
+          <ngx-datatable-column name="User Type" prop='userType'>
           </ngx-datatable-column>
           <ngx-datatable-column name="Location" prop='location'>
-          </ngx-datatable-column>
-          <ngx-datatable-column name="Access" prop='access'>
           </ngx-datatable-column>
           <ngx-datatable-column name="Actions" prop="name">
             <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
@@ -77,7 +75,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <app-add-staff></app-add-staff>
+        <app-add-staff (refreshTable)="refreshTableMode($event)"></app-add-staff>
       </div>
     </div>
   </div>

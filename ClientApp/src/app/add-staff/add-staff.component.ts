@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { ToastrService } from 'ngx-toastr';
@@ -12,6 +12,7 @@ import { AccountService } from '../_services/account.service';
   styleUrls: ['./add-staff.component.css']
 })
 export class AddStaffComponent implements OnInit {
+  @Output() refreshTable = new EventEmitter();
   @ViewChild('registerUserForm') registerUserForm: NgForm;
   model: any = {};
   dropdownList = [];
@@ -115,6 +116,8 @@ export class AddStaffComponent implements OnInit {
       itemsShowLimit: 3,
       allowSearchFilter: false
     };
+
+    this.refreshTable.emit(false);
   }
 
   onItemSelect(item: any) {
@@ -131,6 +134,7 @@ export class AddStaffComponent implements OnInit {
       console.log(responce);
       this.toastr.success('New user Saved');
       this.registerUserForm.reset();
+      this.refreshTable.emit(true);
       //this.cancel();
     }, error => {
       console.log(error);

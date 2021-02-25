@@ -9,6 +9,8 @@ import { MemberService } from '../_services/member.service';
   styleUrls: ['./staff-list.component.css']
 })
 export class StaffListComponent implements OnInit {
+  refreshMode = false;
+
   ColumnMode = ColumnMode;
   members: Member[];
   rows = [
@@ -55,6 +57,13 @@ export class StaffListComponent implements OnInit {
     this.memberService.getMembers().subscribe(members => {
       this.members = members;
     })
+  }
+
+  refreshTableMode(event: boolean) {
+    this.refreshMode = event;
+    if (this.refreshMode === true) {
+      this.loadMembers();
+    }
   }
 
 }

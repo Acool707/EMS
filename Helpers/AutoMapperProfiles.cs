@@ -12,7 +12,8 @@ namespace EMS.Helpers
     {
         public AutoMapperProfiles( )
         {
-            CreateMap<AppUser, MemberDTO>();
+            CreateMap<AppUser, MemberDTO>()
+                .ForMember(d => d.Name, d => d.MapFrom(x => string.Format("{0} {1}", x.FirstName, x.LastName)));
             CreateMap<Menu, MenuDTO>();
             CreateMap<Permission, PermissionDTO>();
             CreateMap<UserHoliday, UserHolidayDTO>();

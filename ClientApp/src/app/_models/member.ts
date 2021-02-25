@@ -9,6 +9,7 @@ export interface Member {
   firstName?: any;
   middleNames?: any;
   lastName?: any;
+  name: string;
   userType: string;
   department?: any;
   location?: any;
