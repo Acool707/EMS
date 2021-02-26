@@ -8,6 +8,7 @@
   left: 0;
   overflow-y: auto;
   position: fixed;
+  z-index: 999;
 }
 
 .side-bar::-webkit-scrollbar {

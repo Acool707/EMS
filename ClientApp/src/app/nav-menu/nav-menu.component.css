@@ -6,6 +6,7 @@
   position: fixed;
   width: 82%;
   right: 0;
+  z-index: 999;
 }
 .user-dropdown{
   margin-bottom: 0;

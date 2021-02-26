@@ -23,27 +23,46 @@ main {
   vertical-align: middle;
 }
 
-.sec-title h2 {
-  border-bottom: 1px solid #d1f3a3;
-  color: #74904D;
-  font-size: 24px;
-  padding: 5px 0;
-  margin-bottom: 15px;
+.breadcrumb {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: .75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: #e9ecef;
+  border-radius: .25rem;
 }
-
-.m-card {
-  border: 1px solid #d1f3a3;
-  overflow: hidden;
-  border-radius: 8px;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%);
-}
+  .breadcrumb .breadcrumb-item a .feather {
+    height: 18px;
+    width: 18px;
+    margin-right: 5px;
+    fill: rgba(75,75,90,0.12);
+    color: black;
+    vertical-align: sub;
+  }
+  .breadcrumb .breadcrumb-item .page-title{
+       color: #6b6b6b;
+  }
+  .m-card {
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 0 0.46875rem 2.1875rem rgb(90 97 105 / 10%), 0 0.9375rem 1.40625rem rgb(90 97 105 / 10%), 0 0.25rem 0.53125rem rgb(90 97 105 / 12%), 0 0.125rem 0.1875rem rgb(90 97 105 / 10%);
+  }
 
 .m-card-header {
+  border-bottom-color: #f9f9f9;
+  line-height: 30px;
+  width: 100%;
   padding: 10px;
-  background: #fafff9;
-  border-bottom: 1px solid #d1f3a3;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+  margin-bottom: 0;
 }
 
 .m-card-body {
